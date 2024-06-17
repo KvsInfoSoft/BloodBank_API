@@ -14,8 +14,8 @@ namespace BloodBank_Api.Configuration
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
 
-                connectionBloodBanklocal = configuration.GetConnectionString("E_ChikitsaDbConnStrlocal");
-                connectionBloodBank = configuration.GetConnectionString("E_ChikitsaDbConnStr");
+                connectionBloodBanklocal = configuration.GetConnectionString("BloodBankDbConnStrlocal");
+                connectionBloodBank = configuration.GetConnectionString("BloodBankDbConnStr");
             }
             services.AddSingleton(new BloodBankDbInfo(connectionBloodBanklocal));
             services.AddSingleton(new BloodBankDbInfo(connectionBloodBank));
