@@ -21,6 +21,7 @@ namespace BloodBank_Utility.UtilityTools.APIResponse
     public class SingleResponse<TModel> : Response
     {
         public TModel? Data { get; set; }
+        public int ChangePassword { get; set; } = 0;
         public string? Token { get; set; }
     }
 

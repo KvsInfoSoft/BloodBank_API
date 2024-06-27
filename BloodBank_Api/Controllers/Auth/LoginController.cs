@@ -54,7 +54,12 @@ namespace BloodBank_Api.Controllers.Auth
                           expires: DateTime.Now.AddMinutes(120),
                           signingCredentials: credentials);
 
-                        var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);                     
+                        var token = new JwtSecurityTokenHandler().WriteToken(Sectoken);    
+                        
+                        if(res.Password == "123")
+                        {
+                            userLoginDetailModel.ChangePassword = 1;
+                        }
 
                         userLoginDetailModel.Result = ResponseConstrains.RESULT_SUCCESS;
                         userLoginDetailModel.Message = "Login Successfull!";
